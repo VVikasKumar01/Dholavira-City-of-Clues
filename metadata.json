@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix Dholavira: City of Clues",
+  "description": "Digital mystery serious-game prototype based on Dholavira. Explore, decode, and rebuild ancient Harappan engineering systems using source-linked archaeological evidence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
