@@ -65,7 +65,7 @@ interface ClueLocation {
   featureSubtitle: string;
 }
 
-const SKY_PANORAMA_URL = '/src/assets/images/dholavira_sky_panorama_1790659204505.jpg';
+const SKY_PANORAMA_URL = '/images/dholavira_sky_panorama_1790659204505.jpg';
 
 // Archaeological Evidence Hotspot Coordinates - Exact alignment with archaeological strata & water system
 const CLUE_LOCATIONS: ClueLocation[] = [

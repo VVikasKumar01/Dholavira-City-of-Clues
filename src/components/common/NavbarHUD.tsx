@@ -1,6 +1,7 @@
 import React from 'react';
 import { GameState } from '../../types/game';
 import { MISSIONS_DATABASE } from '../../data/missions';
+import archaeologistAvatar from '../../assets/images/dholavira_archaeologist_avatar_1790659225118.jpg';
 import { 
   Compass, 
   BookOpen, 
@@ -49,8 +50,11 @@ export const NavbarHUD: React.FC<Props> = ({
           >
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg overflow-hidden border border-[#c59b4c]/40 shadow-md group-hover:scale-105 transition-transform bg-[#090d15]">
               <img
-                src="/src/assets/images/dholavira_archaeologist_avatar_1790659225118.jpg"
+                src={archaeologistAvatar || '/images/dholavira_archaeologist_avatar_1790659225118.jpg'}
                 alt="Archaeologist"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/images/dholavira_archaeologist_avatar_1790659225118.jpg';
+                }}
                 className="w-full h-full object-cover"
               />
             </div>

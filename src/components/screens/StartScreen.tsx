@@ -11,6 +11,7 @@ import {
   Layers
 } from 'lucide-react';
 import { soundManager } from '../../utils/audio';
+import archaeologistAvatar from '../../assets/images/dholavira_archaeologist_avatar_1790659225118.jpg';
 
 interface Props {
   hasSaveGame: boolean;
@@ -158,8 +159,12 @@ export const StartScreen: React.FC<Props> = ({
         {/* Novelty Principle Pill */}
         <div className="max-w-xl mx-auto mb-8 px-4 py-3 rounded-xl bg-[#0f1521]/80 border border-[#c97a3e]/20 text-xs text-[#cfc2af] leading-relaxed flex items-center gap-3">
           <img
-            src="/src/assets/images/dholavira_archaeologist_avatar_1790659225118.jpg"
+            src={archaeologistAvatar || '/images/dholavira_archaeologist_avatar_1790659225118.jpg'}
             alt="Field Archaeologist"
+            onError={(e) => {
+              // Graceful fallback to static public asset path
+              (e.currentTarget as HTMLImageElement).src = '/images/dholavira_archaeologist_avatar_1790659225118.jpg';
+            }}
             className="w-12 h-12 rounded-xl object-cover border border-[#c97a3e]/40 shadow-md shrink-0"
           />
           <div className="text-left">

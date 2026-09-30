@@ -21,8 +21,9 @@ import {
   FileText
 } from 'lucide-react';
 import { soundManager } from '../../utils/audio';
+import cinematicShot from '../../assets/images/dholavira_aaa_gameplay_shot_1790660182612.jpg';
 
-const CINEMATIC_RENDER_URL = '/src/assets/images/dholavira_aaa_gameplay_shot_1790660182612.jpg';
+const CINEMATIC_RENDER_URL = cinematicShot || '/images/dholavira_aaa_gameplay_shot_1790660182612.jpg';
 
 interface Props {
   state: GameState;
@@ -213,6 +214,9 @@ export const CityMapView: React.FC<Props> = ({
               src={CINEMATIC_RENDER_URL}
               alt="Dholavira Archaeological Adventure AAA Game Scene"
               referrerPolicy="no-referrer"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = '/images/dholavira_aaa_gameplay_shot_1790660182612.jpg';
+              }}
               className="w-full h-full object-cover select-none"
             />
 

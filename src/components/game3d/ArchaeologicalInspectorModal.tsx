@@ -13,9 +13,10 @@ import {
   Award
 } from 'lucide-react';
 import { soundManager } from '../../utils/audio';
+import reservoirConcept from '../../assets/images/dholavira_reservoir_concept_1790659215477.jpg';
 
 // Image reference generated for Dholavira Reservoir Concept
-const RESERVOIR_IMAGE_URL = '/src/assets/images/dholavira_reservoir_concept_1790659215477.jpg';
+const RESERVOIR_IMAGE_URL = reservoirConcept || '/images/dholavira_reservoir_concept_1790659215477.jpg';
 
 interface Props {
   evidence: EvidenceItem;
@@ -85,6 +86,9 @@ export const ArchaeologicalInspectorModal: React.FC<Props> = ({
               src={RESERVOIR_IMAGE_URL}
               alt="Archaeological Reconstruction of Dholavira Eastern Rock-Cut Reservoir"
               referrerPolicy="no-referrer"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = '/images/dholavira_reservoir_concept_1790659215477.jpg';
+              }}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent pointer-events-none" />
